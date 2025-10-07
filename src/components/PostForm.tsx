@@ -58,23 +58,23 @@ const PostForm: React.FC<PostFormProps> = ({
     const newErrors: Partial<PostFormData> = {};
 
     if (!formData.title.trim()) {
-      newErrors.title = 'Title is required';
+      newErrors.title = 'Título é obrigatório';
     }
 
     if (!formData.content.trim()) {
-      newErrors.content = 'Content is required';
+      newErrors.content = 'Conteúdo é obrigatório';
     }
 
     if (!formData.author.trim()) {
-      newErrors.author = 'Author is required';
+      newErrors.author = 'Autor é obrigatório';
     }
 
     if (!formData.description.trim()) {
-      newErrors.description = 'Description is required';
+      newErrors.description = 'Descrição é obrigatória';
     }
 
     if (formData.description.length > 200) {
-      newErrors.description = 'Description must be less than 200 characters';
+      newErrors.description = 'Descrição deve ter menos de 200 caracteres';
     }
 
     setErrors(newErrors);
@@ -104,14 +104,14 @@ const PostForm: React.FC<PostFormProps> = ({
     <div className="card">
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <label htmlFor="title" className="form-label">Title *</label>
+          <label htmlFor="title" className="form-label">Título *</label>
           <input
             id="title"
             name="title"
             type="text"
             value={formData.title}
             onChange={handleChange}
-            placeholder="Enter post title"
+            placeholder="Digite o título do post"
             disabled={isLoading}
             className="input focus-ring"
           />
@@ -119,14 +119,14 @@ const PostForm: React.FC<PostFormProps> = ({
         </div>
 
         <div className="form-group">
-          <label htmlFor="author" className="form-label">Author *</label>
+          <label htmlFor="author" className="form-label">Autor *</label>
           <input
             id="author"
             name="author"
             type="text"
             value={formData.author}
             onChange={handleChange}
-            placeholder="Enter author name"
+            placeholder="Digite o nome do autor"
             disabled={isLoading}
             className="input focus-ring"
           />
@@ -134,31 +134,31 @@ const PostForm: React.FC<PostFormProps> = ({
         </div>
 
         <div className="form-group">
-          <label htmlFor="description" className="form-label">Description *</label>
+          <label htmlFor="description" className="form-label">Descrição *</label>
           <textarea
             id="description"
             name="description"
             value={formData.description}
             onChange={handleChange}
-            placeholder="Enter a brief description of the post"
+            placeholder="Digite uma breve descrição do post"
             disabled={isLoading}
             className="textarea focus-ring"
             style={{ minHeight: '80px' }}
           />
           <div className="form-hint">
-            {formData.description.length}/200 characters
+            {formData.description.length}/200 caracteres
           </div>
           {errors.description && <div className="error">{errors.description}</div>}
         </div>
 
         <div className="form-group">
-          <label htmlFor="content" className="form-label">Content *</label>
+          <label htmlFor="content" className="form-label">Conteúdo *</label>
           <textarea
             id="content"
             name="content"
             value={formData.content}
             onChange={handleChange}
-            placeholder="Write your post content here..."
+            placeholder="Escreva o conteúdo do seu post aqui..."
             disabled={isLoading}
             className="textarea focus-ring"
             style={{ minHeight: '200px' }}
@@ -178,7 +178,7 @@ const PostForm: React.FC<PostFormProps> = ({
               className="focus-ring"
             />
             <label htmlFor="published" className="form-label" style={{ marginBottom: 0, cursor: 'pointer' }}>
-              Publish immediately
+              Publicar imediatamente
             </label>
           </div>
         </div>
@@ -192,19 +192,19 @@ const PostForm: React.FC<PostFormProps> = ({
               disabled={isLoading}
             >
               <X size={16} style={{ marginRight: '0.25rem' }} />
-              Cancel
+              Cancelar
             </button>
           )}
           <button type="submit" className="btn btn-primary" disabled={isLoading}>
             {isLoading ? (
               <div className="flex items-center gap-2">
                 <div className="spinner" style={{ width: '16px', height: '16px' }} />
-                Saving...
+                Salvando...
               </div>
             ) : (
               <>
                 <Save size={16} style={{ marginRight: '0.25rem' }} />
-                {initialData ? 'Update Post' : 'Create Post'}
+                {initialData ? 'Atualizar Post' : 'Criar Post'}
               </>
             )}
           </button>

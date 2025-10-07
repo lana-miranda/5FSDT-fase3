@@ -28,13 +28,13 @@ const LoginForm: React.FC = () => {
     e.preventDefault();
     
     if (!formData.username.trim() || !formData.password.trim()) {
-      setError('Please fill in all fields');
+      setError('Por favor, preencha todos os campos');
       return;
     }
 
     const success = await login(formData);
     if (!success) {
-      setError('Invalid username or password');
+      setError('Usuário ou senha inválidos');
     }
   };
 
@@ -60,16 +60,16 @@ const LoginForm: React.FC = () => {
             color: 'var(--text)',
             marginBottom: '0.5rem'
           }}>
-            Welcome Back
+            Bem-vindo de Volta
           </h1>
           <p style={{ color: 'var(--text-muted)' }}>
-            Sign in to manage your blog posts
+            Entre para gerenciar seus posts do blog
           </p>
         </div>
 
         <form onSubmit={handleSubmit}>
           <div className="form-group">
-            <label htmlFor="username" className="form-label">Username</label>
+            <label htmlFor="username" className="form-label">Usuário</label>
             <div style={{ position: 'relative' }}>
               <User 
                 size={20} 
@@ -87,7 +87,7 @@ const LoginForm: React.FC = () => {
                 type="text"
                 value={formData.username}
                 onChange={handleChange}
-                placeholder="Enter your username"
+                placeholder="Digite seu usuário"
                 disabled={isLoading}
                 className="input focus-ring"
                 style={{ paddingLeft: '2.5rem' }}
@@ -96,7 +96,7 @@ const LoginForm: React.FC = () => {
           </div>
 
           <div className="form-group">
-            <label htmlFor="password" className="form-label">Password</label>
+            <label htmlFor="password" className="form-label">Senha</label>
             <div style={{ position: 'relative' }}>
               <Lock 
                 size={20} 
@@ -114,7 +114,7 @@ const LoginForm: React.FC = () => {
                 type="password"
                 value={formData.password}
                 onChange={handleChange}
-                placeholder="Enter your password"
+                placeholder="Digite sua senha"
                 disabled={isLoading}
                 className="input focus-ring"
                 style={{ paddingLeft: '2.5rem' }}
@@ -133,12 +133,12 @@ const LoginForm: React.FC = () => {
             {isLoading ? (
               <div className="flex items-center justify-center gap-2">
                 <div className="spinner" style={{ width: '16px', height: '16px' }} />
-                Signing in...
+                Entrando...
               </div>
             ) : (
               <div className="flex items-center justify-center gap-2">
                 <LogIn size={16} />
-                Sign In
+                Entrar
               </div>
             )}
           </button>

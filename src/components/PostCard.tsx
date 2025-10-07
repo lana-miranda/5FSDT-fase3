@@ -14,7 +14,7 @@ interface PostCardProps {
 
 const PostCard: React.FC<PostCardProps> = ({ post, showActions = false, onEdit, onDelete }) => {
   const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString('en-US', {
+    return new Date(dateString).toLocaleDateString('pt-BR', {
       year: 'numeric',
       month: 'long',
       day: 'numeric',
@@ -68,7 +68,7 @@ const PostCard: React.FC<PostCardProps> = ({ post, showActions = false, onEdit, 
           </div>
           {!post.published && (
             <span className="badge badge-draft">
-              Draft
+              Rascunho
             </span>
           )}
         </div>
@@ -78,7 +78,7 @@ const PostCard: React.FC<PostCardProps> = ({ post, showActions = false, onEdit, 
         <Link href={`/posts/${post.id}`}>
           <button className="btn btn-secondary btn-sm">
             <Eye size={14} style={{ marginRight: '0.25rem' }} />
-            Read More
+            Ler Mais
           </button>
         </Link>
 
@@ -89,14 +89,14 @@ const PostCard: React.FC<PostCardProps> = ({ post, showActions = false, onEdit, 
               onClick={() => onEdit(post)}
             >
               <Edit size={14} style={{ marginRight: '0.25rem' }} />
-              Edit
+              Editar
             </button>
             <button 
               className="btn btn-danger btn-sm"
               onClick={() => onDelete(post.id)}
             >
               <Trash2 size={14} style={{ marginRight: '0.25rem' }} />
-              Delete
+              Excluir
             </button>
           </div>
         )}

@@ -37,7 +37,7 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children, requireAdmin 
         alignItems: 'center', 
         justifyContent: 'center' 
       }}>
-        <LoadingSpinner size="lg" text="Loading..." />
+        <LoadingSpinner size="lg" text="Carregando..." />
       </div>
     );
   }

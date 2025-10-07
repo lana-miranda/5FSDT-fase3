@@ -63,7 +63,7 @@ export default function EditPostPage() {
   if (isLoading) {
     return (
       <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <LoadingSpinner size="lg" text="Loading post..." />
+        <LoadingSpinner size="lg" text="Carregando post..." />
       </div>
     );
   }
@@ -72,8 +72,8 @@ export default function EditPostPage() {
     return (
       <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <div style={{ textAlign: 'center' }}>
-          <h2 style={{ color: 'var(--danger)', marginBottom: '1rem' }}>Post Not Found</h2>
-                <p style={{ color: 'var(--text-muted)' }}>The post you&apos;re trying to edit doesn&apos;t exist.</p>
+          <h2 style={{ color: 'var(--danger)', marginBottom: '1rem' }}>Post Não Encontrado</h2>
+                <p style={{ color: 'var(--text-muted)' }}>O post que você está tentando editar não existe.</p>
         </div>
       </div>
     );
@@ -87,10 +87,10 @@ export default function EditPostPage() {
           <div className="container">
             <div style={{ marginBottom: '2rem' }}>
               <h1 style={{ fontSize: '2rem', fontWeight: 'bold', color: 'var(--text)' }}>
-                Edit Post
+                Editar Post
               </h1>
               <p style={{ color: 'var(--text-muted)', marginTop: '0.5rem' }}>
-                Update your blog post
+                Atualize seu post do blog
               </p>
             </div>
 

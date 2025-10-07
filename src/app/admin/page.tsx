@@ -19,7 +19,7 @@ export default function AdminPage() {
   const handleDelete = async (postId: number) => {
     if (
       !confirm(
-        "Are you sure you want to delete this post? This action cannot be undone."
+        "Tem certeza que deseja excluir este post? Esta ação não pode ser desfeita."
       )
     ) {
       return;
@@ -51,7 +51,7 @@ export default function AdminPage() {
           justifyContent: "center",
         }}
       >
-        <LoadingSpinner size="lg" text="Loading posts..." />
+        <LoadingSpinner size="lg" text="Carregando posts..." />
       </div>
     );
   }
@@ -68,7 +68,7 @@ export default function AdminPage() {
       >
         <div style={{ textAlign: "center" }}>
           <h2 style={{ color: "var(--danger)", marginBottom: "1rem" }}>
-            Error Loading Posts
+            Erro ao Carregar Posts
           </h2>
           <p style={{ color: "var(--text-muted)" }}>{error}</p>
         </div>
@@ -94,12 +94,12 @@ export default function AdminPage() {
                   className="title"
                   style={{ fontSize: "2rem", marginBottom: 0 }}
                 >
-                  Dashboard
+                  Painel de Controle
                 </h1>
                 <Link href="/create">
                   <button className="btn btn-primary">
                     <Plus size={16} style={{ marginRight: "0.25rem" }} />
-                    New Post
+                    Novo Post
                   </button>
                 </Link>
               </div>
@@ -126,7 +126,7 @@ export default function AdminPage() {
                   >
                     {posts.length}
                   </h3>
-                  <p className="muted">Total Posts</p>
+                  <p className="muted">Total de Posts</p>
                 </div>
                 <div
                   className="card"
@@ -142,7 +142,7 @@ export default function AdminPage() {
                   >
                     {publishedPosts.length}
                   </h3>
-                  <p className="muted">Published</p>
+                  <p className="muted">Publicados</p>
                 </div>
                 <div
                   className="card"
@@ -158,7 +158,7 @@ export default function AdminPage() {
                   >
                     {draftPosts.length}
                   </h3>
-                  <p className="muted">Drafts</p>
+                  <p className="muted">Rascunhos</p>
                 </div>
               </div>
             </div>
@@ -174,7 +174,7 @@ export default function AdminPage() {
                     marginBottom: "1rem",
                   }}
                 >
-                  Published Posts ({publishedPosts.length})
+                  Posts Publicados ({publishedPosts.length})
                 </h2>
                 <div className="grid" style={{ gap: "1.5rem" }}>
                   {publishedPosts.map((post) => (
@@ -200,7 +200,7 @@ export default function AdminPage() {
                             borderRadius: "8px",
                           }}
                         >
-                          <LoadingSpinner text="Deleting..." />
+                          <LoadingSpinner text="Excluindo..." />
                         </div>
                       )}
                     </div>
@@ -220,7 +220,7 @@ export default function AdminPage() {
                     marginBottom: "1rem",
                   }}
                 >
-                  Draft Posts ({draftPosts.length})
+                  Posts em Rascunho ({draftPosts.length})
                 </h2>
                 <div className="grid" style={{ gap: "1.5rem" }}>
                   {draftPosts.map((post) => (
@@ -246,7 +246,7 @@ export default function AdminPage() {
                             borderRadius: "8px",
                           }}
                         >
-                          <LoadingSpinner text="Deleting..." />
+                          <LoadingSpinner text="Excluindo..." />
                         </div>
                       )}
                     </div>
@@ -264,12 +264,12 @@ export default function AdminPage() {
                 }}
               >
                 <h3 className="title" style={{ marginBottom: "0.5rem" }}>
-                  No posts yet
+                  Nenhum post ainda
                 </h3>
                 <Link href="/create">
                   <button className="btn btn-primary">
                     <Plus size={16} style={{ marginRight: "0.25rem" }} />
-                    Create First Post
+                    Criar Primeiro Post
                   </button>
                 </Link>
               </div>

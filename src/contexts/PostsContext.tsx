@@ -87,7 +87,7 @@ export const PostsProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       const posts = await postsService.getAllPosts();
       dispatch({ type: 'FETCH_POSTS_SUCCESS', payload: posts });
     } catch {
-      dispatch({ type: 'FETCH_POSTS_FAILURE', payload: 'Failed to fetch posts' });
+      dispatch({ type: 'FETCH_POSTS_FAILURE', payload: 'Falha ao carregar posts' });
     }
   };
 
@@ -97,7 +97,7 @@ export const PostsProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       dispatch({ type: 'CREATE_POST_SUCCESS', payload: newPost });
       return true;
     } catch {
-      dispatch({ type: 'FETCH_POSTS_FAILURE', payload: 'Failed to create post' });
+      dispatch({ type: 'FETCH_POSTS_FAILURE', payload: 'Falha ao criar post' });
       return false;
     }
   };
@@ -108,7 +108,7 @@ export const PostsProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       dispatch({ type: 'UPDATE_POST_SUCCESS', payload: updatedPost });
       return true;
     } catch {
-      dispatch({ type: 'FETCH_POSTS_FAILURE', payload: 'Failed to update post' });
+      dispatch({ type: 'FETCH_POSTS_FAILURE', payload: 'Falha ao atualizar post' });
       return false;
     }
   };
@@ -119,7 +119,7 @@ export const PostsProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       dispatch({ type: 'DELETE_POST_SUCCESS', payload: id });
       return true;
     } catch {
-      dispatch({ type: 'FETCH_POSTS_FAILURE', payload: 'Failed to delete post' });
+      dispatch({ type: 'FETCH_POSTS_FAILURE', payload: 'Falha ao excluir post' });
       return false;
     }
   };

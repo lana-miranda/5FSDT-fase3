@@ -31,7 +31,7 @@ const Header: React.FC<HeaderProps> = ({ onSearch }) => {
                 />
                 <input
                   type="text"
-                  placeholder="Search posts..."
+                  placeholder="Buscar posts..."
                   onChange={(e) => onSearch(e.target.value)}
                   className="input focus-ring"
                   style={{
@@ -48,7 +48,7 @@ const Header: React.FC<HeaderProps> = ({ onSearch }) => {
                   <Link href="/create">
                     <button className="btn btn-sm">
                       <Plus size={16} style={{ marginRight: '0.25rem' }} />
-                      New Post
+                      Novo Post
                     </button>
                   </Link>
                   
@@ -56,7 +56,7 @@ const Header: React.FC<HeaderProps> = ({ onSearch }) => {
                     <Link href="/admin">
                       <button className="btn btn-secondary btn-sm">
                         <Settings size={16} style={{ marginRight: '0.25rem' }} />
-                        Dashboard
+                        Painel
                       </button>
                     </Link>
                   )}
@@ -70,13 +70,13 @@ const Header: React.FC<HeaderProps> = ({ onSearch }) => {
 
                   <button className="btn btn-secondary btn-sm" onClick={logout}>
                     <LogOut size={16} style={{ marginRight: '0.25rem' }} />
-                    Logout
+                    Sair
                   </button>
                 </div>
               </>
             ) : (
               <Link href="/login">
-                Login
+                Entrar
               </Link>
             )}
           </div>

@@ -47,14 +47,14 @@ export default function CreatePostPage() {
         <Header />
         <main className="main">
           <div className="container">
-            <div style={{ marginBottom: '2rem' }}>
-              <h1 style={{ fontSize: '2rem', fontWeight: 'bold', color: 'var(--text)' }}>
-                Create New Post
-              </h1>
-              <p style={{ color: 'var(--text-muted)', marginTop: '0.5rem' }}>
-                Write and publish a new blog post
-              </p>
-            </div>
+          <div style={{ marginBottom: '2rem' }}>
+            <h1 style={{ fontSize: '2rem', fontWeight: 'bold', color: 'var(--text)' }}>
+              Criar Novo Post
+            </h1>
+            <p style={{ color: 'var(--text-muted)', marginTop: '0.5rem' }}>
+              Escreva e publique um novo post do blog
+            </p>
+          </div>
 
             <PostForm
               onSubmit={handleSubmit}

@@ -24,7 +24,7 @@ export default function LoginPage() {
         alignItems: 'center', 
         justifyContent: 'center' 
       }}>
-        <LoadingSpinner size="lg" text="Loading..." />
+        <LoadingSpinner size="lg" text="Carregando..." />
       </div>
     );
   }

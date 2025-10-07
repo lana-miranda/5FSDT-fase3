@@ -41,7 +41,7 @@ export default function Home() {
   if (isLoading) {
     return (
       <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <LoadingSpinner size="lg" text="Loading posts..." />
+        <LoadingSpinner size="lg" text="Carregando posts..." />
       </div>
     );
   }
@@ -50,7 +50,7 @@ export default function Home() {
     return (
       <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <div style={{ textAlign: 'center' }}>
-          <h2 style={{ color: 'var(--danger)', marginBottom: '1rem' }}>Error Loading Posts</h2>
+          <h2 style={{ color: 'var(--danger)', marginBottom: '1rem' }}>Erro ao Carregar Posts</h2>
           <p style={{ color: 'var(--text-muted)' }}>{error}</p>
         </div>
       </div>
@@ -66,10 +66,10 @@ export default function Home() {
             <div className="flex flex-col gap-4" style={{ marginBottom: '1rem' }}>
               <div>
                 <h1 className="title" style={{ fontSize: '2rem', marginBottom: '0.25rem' }}>
-                  Blog Posts
+                  Posts do Blog
                 </h1>
                 <p className="subtitle" style={{ marginBottom: 0 }}>
-                  Discover and explore our latest content
+                  Descubra e explore nosso conteúdo mais recente
                 </p>
               </div>
               {isAdmin && <div className="flex items-center gap-4">
@@ -81,7 +81,7 @@ export default function Home() {
                     onChange={(e) => setShowOnlyPublished(e.target.checked)}
                   />
                   <label htmlFor="published-only" style={{ fontSize: '0.875rem', cursor: 'pointer' }}>
-                    Published only
+                    Apenas publicados
                   </label>
                 </div>
               </div>}
@@ -89,7 +89,7 @@ export default function Home() {
             
             {searchQuery && (
               <p style={{ color: 'var(--text-muted)', fontSize: '0.875rem' }}>
-                Showing {filteredPosts.length} result{filteredPosts.length !== 1 ? 's' : ''} for &quot;{searchQuery}&quot;
+                Mostrando {filteredPosts.length} resultado{filteredPosts.length !== 1 ? 's' : ''} para &quot;{searchQuery}&quot;
               </p>
             )}
           </div>
@@ -112,12 +112,12 @@ export default function Home() {
                 <Search size={32} />
               </div>
               <h3 className="title" style={{ marginBottom: '0.5rem' }}>
-                {searchQuery ? 'No posts found' : 'No posts available'}
+                {searchQuery ? 'Nenhum post encontrado' : 'Nenhum post disponível'}
               </h3>
               <p className="muted">
                 {searchQuery 
-                  ? 'Try adjusting your search terms or filters'
-                  : 'Check back later for new content'
+                  ? 'Tente ajustar seus termos de busca ou filtros'
+                  : 'Volte mais tarde para ver novos conteúdos'
                 }
               </p>
             </div>

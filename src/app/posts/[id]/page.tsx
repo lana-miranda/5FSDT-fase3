@@ -78,7 +78,7 @@ export default function PostDetailPage() {
   };
 
   const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString('en-US', {
+    return new Date(dateString).toLocaleDateString('pt-BR', {
       year: 'numeric',
       month: 'long',
       day: 'numeric',
@@ -90,7 +90,7 @@ export default function PostDetailPage() {
   if (isLoading) {
     return (
       <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <LoadingSpinner size="lg" text="Loading post..." />
+        <LoadingSpinner size="lg" text="Carregando post..." />
       </div>
     );
   }
@@ -99,10 +99,10 @@ export default function PostDetailPage() {
     return (
       <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <div style={{ textAlign: 'center' }}>
-          <h2 style={{ color: 'var(--danger)', marginBottom: '1rem' }}>Post Not Found</h2>
-          <p style={{ color: 'var(--text-muted)', marginBottom: '1rem' }}>The post you&apos;re looking for doesn&apos;t exist.</p>
+          <h2 style={{ color: 'var(--danger)', marginBottom: '1rem' }}>Post Não Encontrado</h2>
+          <p style={{ color: 'var(--text-muted)', marginBottom: '1rem' }}>O post que você está procurando não existe.</p>
           <Link href="/">
-            <button className="btn btn-primary">Go Back Home</button>
+            <button className="btn btn-primary">Voltar para Início</button>
           </Link>
         </div>
       </div>
@@ -118,7 +118,7 @@ export default function PostDetailPage() {
             <Link href="/" style={{ textDecoration: 'none', color: 'var(--primary)' }}>
               <div className="flex items-center gap-2" style={{ marginBottom: '1rem' }}>
                 <ArrowLeft size={16} />
-                <span>Back to Posts</span>
+                <span>Voltar para Posts</span>
               </div>
             </Link>
           </div>
@@ -146,7 +146,7 @@ export default function PostDetailPage() {
                 </div>
                 {!post.published && (
                   <span className="badge badge-draft">
-                    Draft
+                    Rascunho
                   </span>
                 )}
               </div>
@@ -183,30 +183,30 @@ export default function PostDetailPage() {
               gap: '0.5rem'
             }}>
               <MessageCircle size={20} />
-              Comments ({comments.length})
+              Comentários ({comments.length})
             </h3>
 
             {/* Comment Form */}
             <form onSubmit={handleSubmitComment} style={{ marginBottom: '2rem' }}>
               <div className="form-group">
-                <label htmlFor="comment-author" className="form-label">Your Name</label>
+                <label htmlFor="comment-author" className="form-label">Seu Nome</label>
                 <input
                   id="comment-author"
                   value={newComment.author}
                   onChange={(e) => setNewComment(prev => ({ ...prev, author: e.target.value }))}
-                  placeholder="Enter your name"
+                  placeholder="Digite seu nome"
                   disabled={isSubmittingComment}
                   className="input focus-ring"
                 />
               </div>
               
               <div className="form-group">
-                <label htmlFor="comment-content" className="form-label">Your Comment</label>
+                <label htmlFor="comment-content" className="form-label">Seu Comentário</label>
                 <textarea
                   id="comment-content"
                   value={newComment.content}
                   onChange={(e) => setNewComment(prev => ({ ...prev, content: e.target.value }))}
-                  placeholder="Write your comment here..."
+                  placeholder="Escreva seu comentário aqui..."
                   disabled={isSubmittingComment}
                   className="textarea focus-ring"
                   style={{ minHeight: '100px' }}
@@ -217,12 +217,12 @@ export default function PostDetailPage() {
                 {isSubmittingComment ? (
                   <div className="flex items-center gap-2">
                     <div className="spinner" style={{ width: '16px', height: '16px' }} />
-                    Posting...
+                    Enviando...
                   </div>
                 ) : (
                   <div className="flex items-center gap-2">
                     <Send size={16} />
-                    Post Comment
+                    Postar Comentário
                   </div>
                 )}
               </button>
@@ -230,7 +230,7 @@ export default function PostDetailPage() {
 
             {/* Comments List */}
             {isLoadingComments ? (
-              <LoadingSpinner text="Loading comments..." />
+              <LoadingSpinner text="Carregando comentários..." />
             ) : comments.length === 0 ? (
               <div style={{ 
                 textAlign: 'center', 
@@ -238,7 +238,7 @@ export default function PostDetailPage() {
                 color: 'var(--text-muted)'
               }}>
                 <MessageCircle size={32} style={{ color: 'var(--text-light)', marginBottom: '0.5rem' }} />
-                <p>No comments yet. Be the first to comment!</p>
+                <p>Nenhum comentário ainda. Seja o primeiro a comentar!</p>
               </div>
             ) : (
               <div className="flex flex-col gap-4">
