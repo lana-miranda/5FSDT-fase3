@@ -12,7 +12,7 @@ import { Comment } from '@/types';
 
 export default function PostDetailPage() {
   const params = useParams();
-  const postId = params.id as string;
+  const postId = Number(params.id);
   const { getPostById } = usePosts();
   
   const [post, setPost] = useState(getPostById(postId));

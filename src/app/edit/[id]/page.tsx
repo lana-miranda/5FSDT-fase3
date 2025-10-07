@@ -12,7 +12,7 @@ import { Post, PostFormData } from '@/types';
 
 export default function EditPostPage() {
   const params = useParams();
-  const postId = params.id as string;
+  const postId = Number(params.id);
   const router = useRouter();
   const { updatePost } = usePosts();
   

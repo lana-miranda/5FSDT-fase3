@@ -9,7 +9,7 @@ interface PostCardProps {
   post: Post;
   showActions?: boolean;
   onEdit?: (post: Post) => void;
-  onDelete?: (postId: string) => void;
+  onDelete?: (postId: number) => void;
 }
 
 const PostCard: React.FC<PostCardProps> = ({ post, showActions = false, onEdit, onDelete }) => {
